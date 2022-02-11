@@ -13,6 +13,7 @@ spec:
       valueFiles:
       - values.yaml
     repoURL: https://open-policy-agent.github.io/kube-mgmt/charts
+    targetRevision: v0.37.2
   destination:
     namespace: opa
     server: {{ .Values.cluster }}
