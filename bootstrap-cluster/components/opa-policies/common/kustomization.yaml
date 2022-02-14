@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+configMapGenerator:
+  - files:
+      - config/compute-limits.rego
+    name: compute-limits
+  - files:
+      - config/restrict-host-network-port.rego
+    name: restrict-host-network
+  - files:
+      - config/registry-blacklist.rego
+    name: registry-blacklist
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    openpolicyagent.org/policy: rego
+
+namespace: opa

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-red
+  namespace: app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-red
+  template:
+    metadata:
+      labels:
+        name: nginx-red
+    spec:
+      containers:
+      - name: nginx-red
+        image: nginx
+        volumeMounts:
+          - name: html
+            mountPath: /usr/share/nginx/html/
+      volumes:
+        - name: html
+          configMap:
+            name: nginx-red-response
+            items:
+              - key: message
+                path: index.html

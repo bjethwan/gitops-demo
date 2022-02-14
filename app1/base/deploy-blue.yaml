@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-blue
+  namespace: app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-blue
+  template:
+    metadata:
+      labels:
+        name: nginx-blue
+    spec:
+      containers:
+      - name: nginx-blue
+        image: nginx
+        volumeMounts:
+          - name: html
+            mountPath: /usr/share/nginx/html/
+      volumes:
+        - name: html
+          configMap:
+            name: nginx-blue-response
+            items:
+              - key: message
+                path: index.html

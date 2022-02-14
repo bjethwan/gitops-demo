@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-red-response
+  namespace: app1
+data:
+  message: "<h1 style=\"color:Tomato;\"> NGINX Red</h1>"

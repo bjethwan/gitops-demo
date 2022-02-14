@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - dashboard-clusterrole.yaml
+  - dashboard-clusterrolebinding.yaml
+  - dashboard-configmap.yaml
+  - dashboard-deployment.yaml
+  - dashboard-namespace.yaml
+  - dashboard-role.yaml
+  - dashboard-rolebinding.yaml
+  - dashboard-secret.yaml
+  - dashboard-service.yaml
+  - dashboard-serviceaccount.yaml
+  - metrics-scraper-deployment.yaml
+  - metrics-scraper-service.yaml

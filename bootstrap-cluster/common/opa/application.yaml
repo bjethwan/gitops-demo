@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opa
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.project }}
+  source:
+    chart: opa
+    helm:
+      valueFiles:
+      - values.yaml
+    repoURL: https://open-policy-agent.github.io/kube-mgmt/charts
+    targetRevision: 4.0.0
+  destination:
+    namespace: opa
+    server: {{ .Values.cluster }}
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
