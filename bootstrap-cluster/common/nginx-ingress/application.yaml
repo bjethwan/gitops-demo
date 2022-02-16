@@ -10,15 +10,17 @@ spec:
   source:
     repoURL: 'https://kubernetes.github.io/ingress-nginx'
     targetRevision: 4.0.17
-    chart: ingress-nginx
     helm:
-      controller.admissionWebhooks.enabled: false
+      parameters:
+      - name: controller.admissionWebhooks.enabled
+        value: 'false'
+    chart: ingress-nginx
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: ingress-nginx
+    namespace: nginx-ingress
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
