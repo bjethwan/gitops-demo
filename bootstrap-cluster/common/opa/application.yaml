@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: {{ .Values.project }}
+  project: default
   source:
     chart: opa
     helm:
@@ -16,9 +16,11 @@ spec:
     targetRevision: 4.0.0
   destination:
     namespace: opa
-    server: {{ .Values.cluster }}
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+    - CreateNamespace=true
 

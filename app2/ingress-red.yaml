@@ -1,20 +1,17 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: redblue
-  namespace: app1
+  name: red
+  namespace: app2
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-  - host: apps.k8s1.bjethwan.xyz
+  - host: app.bjethwan.xyz
     http:
       paths:
       - path: /red
         backend:
           serviceName: nginx-red
-          servicePort: 80
-      - path: /blue
-        backend:
-          serviceName: nginx-blue
           servicePort: 80

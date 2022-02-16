@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ingress-configmap
+  namespace: kube-system
+data:
+  client-body-timeout: "180"
+  proxy-body-size: 50m
+  proxy-read-timeout: "180"
+  proxy-send-timeout: "180"
+  proxy-stream-timeout: "180"
+  server-names-hash-bucket-size: "256"
+  ssl-ciphers: HIGH:!aNULL:!MD5
+  upstream-keepalive-connections: "256"
+  use-forwarded-headers: "true"
+  use-http2: "false"

@@ -11,8 +11,10 @@ spec:
   source:
     path: bootstrap-cluster/components/kubernetes-dashboard
     repoURL: https://github.com/bjethwan/gitops-demo.git
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
