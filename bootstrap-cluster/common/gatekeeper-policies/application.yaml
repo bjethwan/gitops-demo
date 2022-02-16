@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: opa-policies
+  name: gatekeeper-policies
   namespace: argocd
 spec:
   destination:
