@@ -1,7 +1,6 @@
 commonLabels:
   app: hello
 resources:
-- ns.yaml
 - cm-red.yaml
 - deploy-red.yaml
 - svc-red.yaml
