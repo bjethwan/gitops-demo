@@ -9,9 +9,6 @@ spec:
   project: default
   source:
     chart: opa
-    helm:
-      valueFiles:
-      - values.yaml
     repoURL: https://open-policy-agent.github.io/kube-mgmt/charts
     targetRevision: 4.0.0
   destination:
