@@ -5,4 +5,5 @@ bases:
   - nginx-ingress
   - cert-manager
   - kubernetes-dashboard
+  - gatekeeper-policy-catalog
   - gatekeeper-policies
