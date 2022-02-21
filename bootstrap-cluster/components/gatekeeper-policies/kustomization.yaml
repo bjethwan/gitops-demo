@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
- - k8srequiredlabels_template.yml
  - exemptions.yaml
- - ns-must-have-gk.yaml
+ - ns-must-have-owner-lbl.yml
+ - containers_must_be_limited.yml

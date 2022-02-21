@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
  - k8srequiredlabels_template.yml
+ - k8scontainterlimits_template.yml
 
