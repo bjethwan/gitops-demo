@@ -49,7 +49,7 @@ spec:
               apiVersion: v1
               fieldPath: metadata.namespace
         image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: nginx-ingress-lb
         ports:
         - name: http
