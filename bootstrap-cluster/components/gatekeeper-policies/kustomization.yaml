@@ -6,3 +6,4 @@ resources:
  - ns-must-have-owner-lbl.yml
  - containers_must_be_limited.yml
  - prod_repo.yml
+ - mutating-imagePullPolicy-ifNotPresent.yml
