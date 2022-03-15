@@ -231,7 +231,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: "mybank"
+  - host: mybank
     http:
       paths:
       - path: /bob

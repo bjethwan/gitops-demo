@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-  - nginx-ingress
-  - gatekeeper-policy-catalog
-  - gatekeeper-policies
+  - ../common
+
+resources:
+  - self.yaml
