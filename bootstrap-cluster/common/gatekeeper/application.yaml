@@ -11,6 +11,10 @@ spec:
     repoURL: 'https://open-policy-agent.github.io/gatekeeper/charts'
     targetRevision: 3.7.1
     chart: gatekeeper
+    helm:
+      parameters:
+      - name: replicas
+        value: '1'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: gatekeeper-system
