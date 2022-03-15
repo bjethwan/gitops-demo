@@ -18,3 +18,5 @@ spec:
   match:
     - excludedNamespaces: ["kube-*", "app*", "kubernetes-dashboard", "cert-manager", "nginx-ingress", "ingress-nginx", "production*"]
       processes: ["*"]
+    - excludedNamespaces: ["production*"]
+      processes: ["webhook"]
