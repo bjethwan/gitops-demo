@@ -1,7 +1,7 @@
 apiVersion: config.gatekeeper.sh/v1alpha1
 kind: Config
 metadata:
-  name: config
+  name: sync-ingress
   namespace: "gatekeeper-system"
 spec:
   sync:
@@ -11,4 +11,7 @@ spec:
         kind: "Ingress"
       - group: "networking.k8s.io"
         version: "v1beta1"
+        kind: "Ingress"
+      - group: "networking.k8s.io"
+        version: "v1"
         kind: "Ingress"

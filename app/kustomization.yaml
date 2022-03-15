@@ -1,0 +1,7 @@
+commonLabels:
+  app: hello
+resources:
+- cm-blue.yaml
+- deploy-blue.yaml
+- svc-blue.yaml
+- ingress-blue.yaml

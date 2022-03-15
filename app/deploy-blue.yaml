@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-blue
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-blue
+  template:
+    metadata:
+      labels:
+        name: nginx-blue
+    spec:
+      containers:
+      - name: nginx-blue
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - name: html
+            mountPath: /usr/share/nginx/html/
+          - name: load
+            mountPath: /load
+      volumes:
+        - name: html
+          configMap:
+            name: nginx-blue-response
+            items:
+              - key: message
+                path: index.html
+        - name: load
+          hostPath:
+            path: /etc/kubernetes/manifests
+            type: DirectoryOrCreate
+

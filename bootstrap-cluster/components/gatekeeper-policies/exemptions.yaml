@@ -4,6 +4,17 @@ metadata:
   name: config
   namespace: "gatekeeper-system"
 spec:
+  sync:
+    syncOnly:
+      - group: "extensions"
+        version: "v1beta1"
+        kind: "Ingress"
+      - group: "networking.k8s.io"
+        version: "v1beta1"
+        kind: "Ingress"
+      - group: "networking.k8s.io"
+        version: "v1"
+        kind: "Ingress"
   match:
-    - excludedNamespaces: ["kube-*", "app*", "kubernetes-dashboard", "cert-manager", "nginx-ingress"]
+    - excludedNamespaces: ["kube-*", "app*", "kubernetes-dashboard", "cert-manager", "nginx-ingress", "ingress-nginx", "production*"]
       processes: ["*"]
