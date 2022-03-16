@@ -8,3 +8,4 @@ resources:
  - prod_repo.yml
  - mutating-imagePullPolicy-ifNotPresent.yml
  - unique-ingress-host.yml
+ - psp-host-filesystem.yml
