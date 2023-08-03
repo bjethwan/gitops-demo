@@ -11,7 +11,10 @@ spec:
   - host: app.bjethwan.xyz
     http:
       paths:
-      - path: /blue
+      - pathType: Prefix
+        path: /blue
         backend:
-          serviceName: nginx-blue
-          servicePort: 80
+          service: 
+            name: nginx-blue
+            port:
+              number: 80
