@@ -11,7 +11,10 @@ spec:
   - host: app.bjethwan.xyz
     http:
       paths:
-      - path: /red
+      - pathType: Prefix
+        path: "/red"
         backend:
-          serviceName: nginx-red
-          servicePort: 80
+          service: 
+            name: nginx-red
+            port: 
+              number: 80
