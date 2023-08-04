@@ -4,4 +4,4 @@ metadata:
   name: nginx-blue-response
   namespace: app1
 data:
-  message: "<h1 style=\"color:blue;\"> NGINX Blue</h1>"
+  message: "<h1 style=\"color:pink;\"> NGINX Demo for Kevin and Suman</h1>"
